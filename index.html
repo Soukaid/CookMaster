@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CookMaster - Expérience Culinaire Internationale</title>
+    <link rel="stylesheet" href="home-styles.css">
+    <script src="auth-system-clean-fixed.js" defer></script>
+    <script src="carousel.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="cart-styles-clean.css">
+    <script src="cart-system.js" defer></script>
+    
+</head>
+<body>
+    <header class="main-header">
+        
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-circle">CM</div>
+                <span class="logo-text">CookMaster</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="nav-link active" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="menu.html" class="nav-link" data-fr="Menu" data-en="Menu">Menu</a></li>
+                <li><a href="apropos.html" class="nav-link" data-fr="Galerie" data-en="Gallery">À propos</a></li>
+                <li><a href="contact.html" class="nav-link" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">FR</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> Français
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                
+                <div class="auth-section">
+                    <a href="login.html" class="auth-btn" id="authButton">
+                        <i class="fas fa-user"></i>
+                        <span data-fr="Connexion" data-en="Login">Connexion</span>
+                    </a>
+                    
+                    <div class="user-profile-compact" id="userProfile" style="display: none;">
+                        <div class="user-dropdown">
+                            <button class="user-toggle" id="userToggle">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="user-name-short" id="userName"></span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="user-menu" id="userMenu">
+                                <a href="profil-real-data.html" class="user-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span data-fr="Mon Profil" data-en="My Profile">Mon Profil</span>
+                                </a>
+                                <button class="user-menu-item logout-btn" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span data-fr="Déconnexion" data-en="Logout">Déconnexion</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="reservation-clean.html" class="book-table-btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span data-fr="Réserver" data-en="Book">Réserver</span>
+                </a>
+                
+                <div class="cart-icon">
+                    <a href="orders.html" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+
+        
+        <div class="hero-section">
+            <div class="hero-content">
+                <h1 data-fr="Une Expérience<br>Culinaire Ambiante" data-en="An Ambient<br>Dining Experience">
+                    Une Expérience<br>Culinaire Ambiante
+                </h1>
+                <p data-fr="Rejoignez-nous à table pour découvrir le repas parfait.<br>Nous servons tous nos clients avec un soin et un service particuliers." 
+                   data-en="Join us at the table as you dive for the perfect meal.<br>We serve all our customers with special care and service.">
+                    Rejoignez-nous à table pour découvrir le repas parfait.<br>
+                    Nous servons tous nos clients avec un soin et un service particuliers.
+                </p>
+                <div class="hero-buttons">
+                    <a href="reservation-clean.html" class="btn-primary" data-fr="Réserver" data-en="Book Now">Réserver</a>
+                    <a href="menu.html" class="btn-secondary" data-fr="Menu" data-en="Menu">Menu</a>
+                </div>
+            </div>
+            
+            <div class="hero-images-container">
+                <div class="hero-images">
+                    
+                    <div class="restaurant-image">
+                        <img src="/images/restaurant-interior--.webp" alt="Intérieur du restaurant">
+                    </div>
+                    
+                    
+                    <div class="dish-image dish-1">
+                        <img src="/images/plat 2.jpg" alt="Plat signature">
+                    </div>
+                    
+                    
+                    <div class="dish-image dish-2">
+                        <img src="/images/plat.avif" alt="Soupe asiatique">
+                    </div>
+                    
+                    
+                    <div class="gallery-badge">
+                        <h3 data-fr="Notre<br>Galerie" data-en="Our<br>Gallery">Notre<br>Galerie</h3>
+                    </div>
+                    
+                   
+                    <div class="decorative-elements">
+                        <div class="star-decoration star-1"></div>
+                        <div class="star-decoration star-2"></div>
+                        <div class="diamond-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section Cuisine -->
+    <section class="cuisine-section">
+        <div class="cuisine-content">
+            <h2 data-fr="La Plus Fine<br>Cuisine Internationale" data-en="The Finest<br>International Cuisine">
+                La Plus Fine<br>Cuisine Internationale
+            </h2>
+            <p data-fr="Chez CookMaster, nous excellons dans la création de la meilleure expérience culinaire mondiale. En utilisant des ingrédients frais, des recettes authentiques, avec notre passion, nous promettons des moments gastronomiques inoubliables." 
+               data-en="At CookMaster, we thrive at creating the best global culinary experience. Using fresh ingredients, authentic recipes, together with our passion, we promise unforgettable dining moments.">
+                Chez CookMaster, nous excellons dans la création de la meilleure expérience culinaire mondiale. En utilisant des ingrédients frais, des recettes authentiques, avec notre passion, nous promettons des moments gastronomiques inoubliables.
+            </p>
+            <a href="menu.html" class="btn-primary" data-fr="Voir le Menu" data-en="View Menu">Voir le Menu</a>
+        </div>
+        <div class="cuisine-image">
+            <img src="/images/plat signature.jpg" alt="Plat signature">
+            <div class="image-decorations">
+                <div class="decoration-dot"></div>
+                <div class="decoration-star"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Plats Spéciaux avec Carousel -->
+    <section class="special-dishes">
+        <div class="container">
+            <h2 class="section-title" data-fr="Nos Plats Spéciaux" data-en="Our Special Dishes">Nos Plats Spéciaux</h2>
+            
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel-track" id="carouselTrack">
+                        <div class="dish-card">
+                            <div class="dish-image-container">
+                                <img src="images/Pasta Italiana.jpg" alt="Pasta Italiana">
+                                <div class="dish-overlay">
+                                    <a href="menu.html#Pasta%20Italiana" class="view-dish-btn" data-fr="Voir le plat" data-en="View Dish">Voir le plat</a>
+                                </div>
+                            </div>
+                            <div class="dish-info">
+                                <h3 data-fr="Pasta Italiana" data-en="Italian Pasta">Pasta Italiana</h3>
+                                <div class="dish-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.8</span>
+                                </div>
+                                <p class="dish-price">€24</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image-container">
+                                <img src="/images/Sushi Japonais.jpg" alt="Sushi Japonais">
+                                <div class="dish-overlay">
+                                    <a href="menu.html#Sushi%20Japonais" class="view-dish-btn" data-fr="Voir le plat" data-en="View Dish">Voir le plat</a>
+                                </div>
+                            </div>
+                            <div class="dish-info">
+                                <h3 data-fr="Sushi Japonais" data-en="Japanese Sushi">Sushi Japonais</h3>
+                                <div class="dish-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.9</span>
+                                </div>
+                                <p class="dish-price">€32</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image-container">
+                                <img src="images/Curry Indien.jpg" alt="Curry Indien">
+                                <div class="dish-overlay">
+                                    <a href="menu.html#Curry%20Indien" class="view-dish-btn" data-fr="Voir le plat" data-en="View Dish">Voir le plat</a>
+                                </div>
+                            </div>
+                            <div class="dish-info">
+                                <h3 data-fr="Curry Indien" data-en="Indian Curry">Curry Indien</h3>
+                                <div class="dish-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span>4.6</span>
+                                </div>
+                                <p class="dish-price">€28</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image-container">
+                                <img src="images/Tacos Mexicains.jpg" alt="Tacos Mexicains">
+                                <div class="dish-overlay">
+                                    <a href="menu.html#Tacos%20Mexicains" class="view-dish-btn" data-fr="Voir le plat" data-en="View Dish">Voir le plat</a>
+                                </div>
+                            </div>
+                            <div class="dish-info">
+                                <h3 data-fr="Tacos Mexicains" data-en="Mexican Tacos">Tacos Mexicains</h3>
+                                <div class="dish-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span>4.7</span>
+                                </div>
+                                <p class="dish-price">€22</p>
+                            </div>
+                        </div>
+                        
+                        <div class="dish-card">
+                            <div class="dish-image-container">
+                                <img src="images/Couscous.webp" alt="Couscous Marocain">
+                                <div class="dish-overlay">
+                                    <a href="menu.html#Couscous%20Marocain" class="view-dish-btn" data-fr="Voir le plat" data-en="View Dish">Voir le plat</a>
+                                </div>
+                            </div>
+                            <div class="dish-info">
+                                <h3 data-fr="Couscous Marocain" data-en="Moroccan Couscous">Couscous Marocain</h3>
+                                <div class="dish-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span>4.8</span>
+                                </div>
+                                <p class="dish-price">€26</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carousel-btn carousel-prev" id="carouselPrev">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn carousel-next" id="carouselNext">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-fr="Ce Que Disent Nos Clients" data-en="What Our Guests Say">Ce Que Disent Nos Clients</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-fr="La fusion des saveurs chez CookMaster est tout simplement extraordinaire. Chaque plat raconte une histoire d'une partie différente du monde. Vraiment un voyage culinaire !" 
+                       data-en="The fusion of flavors at CookMaster is simply extraordinary. Each dish tells a story from a different part of the world. Truly a culinary journey!">
+                        "La fusion des saveurs chez CookMaster est tout simplement extraordinaire. Chaque plat raconte une histoire d'une partie différente du monde. Vraiment un voyage culinaire !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/sophie.jfif" alt="Sophie Laurent">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sophie Laurent</h4>
+                            <span data-fr="Critique Gastronomique" data-en="Food Critic">Critique Gastronomique</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text" data-fr="L'ambiance est parfaite pour les dîners d'affaires et les soirées romantiques. Le personnel est attentif et connaît parfaitement chaque plat international qu'ils servent." 
+                       data-en="The ambiance is perfect for both business dinners and romantic evenings. The staff is attentive and knowledgeable about every international dish they serve.">
+                        "L'ambiance est parfaite pour les dîners d'affaires et les soirées romantiques. Le personnel est attentif et connaît parfaitement chaque plat international qu'ils servent."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/marc.jfif" alt="Marc Dubois">
+                        </div>
+                        <div class="author-info">
+                            <h4>Marc Dubois</h4>
+                            <span data-fr="Client Régulier" data-en="Regular Guest">Client Régulier</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text" data-fr="En tant que personne qui a beaucoup voyagé, je peux dire avec confiance que CookMaster capture parfaitement les saveurs authentiques du monde entier." 
+                       data-en="As someone who has traveled extensively, I can confidently say that CookMaster captures authentic flavors from around the world perfectly.">
+                        "En tant que personne qui a beaucoup voyagé, je peux dire avec confiance que CookMaster capture les saveurs authentiques du monde entier."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-image">
+                            <img src="images/elena.jfif" alt="Elena Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Elena Rodriguez</h4>
+                            <span data-fr="Blogueuse Voyage" data-en="Travel Blogger">Blogueuse Voyage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="admin.html" class="admin-floating-button" title="Espace Administrateur">
+    <i class="fas fa-user-shield"></i>
+    </a>
+
+
+
+    
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-logo">
+                    <div class="logo-circle">CM</div>
+                    <span class="logo-text">CookMaster</span>
+                </div>
+                <div class="footer-tagline">
+                    <p data-fr="Un Voyage Culinaire Mondial" data-en="A Global Culinary Journey">Un Voyage Culinaire Mondial</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 data-fr="Abonnez-vous à notre newsletter" data-en="Subscribe to our newsletter">Abonnez-vous à notre newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Votre adresse email" required data-fr-placeholder="Votre adresse email" data-en-placeholder="Your email address">
+                        <button type="submit" data-fr="S'abonner" data-en="Subscribe">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 data-fr="Horaires" data-en="Hours">Horaires</h4>
+                        <p data-fr="Lundi - Vendredi: 11:00 - 23:00" data-en="Monday - Friday: 11:00 - 23:00">Lundi - Vendredi: 11:00 - 23:00</p>
+                        <p data-fr="Samedi - Dimanche: 10:00 - 00:00" data-en="Saturday - Sunday: 10:00 - 00:00">Samedi - Dimanche: 10:00 - 00:00</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p>+212 5 22 25 66 89</p>
+                        <p>info@cookmaster.com</p>
+                        <p>65, Rue Ibnou Nafii, Maârif, Casablanca</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-fr="Suivez-nous" data-en="Follow Us">Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-fr="Récompenses" data-en="Awards">Récompenses</h4>
+                        <div class="awards-icons">
+                            <img src="images/michelin.png" alt="Michelin Star">
+                            <img src="images/Gault & Millau.jpg" alt="Gault Millau">
+                            <img src="images/Top 10 World's 50 Best.avif" alt="World's Best">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2025 CookMaster. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</a>
+                    <a href="#" data-fr="Conditions d'Utilisation" data-en="Terms of Service">Conditions d'Utilisation</a>
+                    <a href="#" data-fr="Carrières" data-en="Careers">Carrières</a>
+                    <a href="#" data-fr="Plan du Site" data-en="Sitemap">Plan du Site</a>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

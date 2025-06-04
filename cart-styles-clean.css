@@ -1,0 +1,527 @@
+/* === STYLES PANIER COOKMASTER - VERSION PROPRE === */
+/* Tous les styles utilisent le préfixe "cookmaster-" pour éviter les conflits */
+
+/* Variables spécifiques au panier */
+:root {
+  --cookmaster-cart-primary: #c8815f;
+  --cookmaster-cart-secondary: #1a2b4c;
+  --cookmaster-cart-success: #10b981;
+  --cookmaster-cart-error: #ef4444;
+  --cookmaster-cart-bg: #ffffff;
+  --cookmaster-cart-text: #333333;
+  --cookmaster-cart-border: rgba(200, 129, 95, 0.2);
+  --cookmaster-cart-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --cookmaster-cart-item-bg: #f8f9fa;
+  --cookmaster-cart-item-hover: rgba(200, 129, 95, 0.1);
+}
+
+[data-theme="dark"] {
+  --cookmaster-cart-bg: #2a2a2a;
+  --cookmaster-cart-text: #e5e5e5;
+  --cookmaster-cart-border: rgba(200, 129, 95, 0.3);
+  --cookmaster-cart-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --cookmaster-cart-item-bg: #1f1f1f;
+  --cookmaster-cart-item-hover: rgba(200, 129, 95, 0.2);
+}
+
+/* Boutons d'ajout au panier dans le menu */
+.cookmaster-cart-btn {
+  background: linear-gradient(135deg, var(--cookmaster-cart-primary), #b8714f);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(200, 129, 95, 0.3);
+  font-family: inherit;
+}
+
+.cookmaster-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(200, 129, 95, 0.4);
+}
+
+.cookmaster-cart-btn.cookmaster-cart-loading {
+  background: #6b7280;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cookmaster-cart-btn.cookmaster-cart-success {
+  background: var(--cookmaster-cart-success);
+}
+
+/* Mini-panier flottant */
+.cookmaster-mini-cart {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: "Inter", sans-serif;
+}
+
+/* Bouton du panier */
+.cookmaster-cart-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cookmaster-cart-primary), #b8714f);
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(200, 129, 95, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  z-index: 10000;
+}
+
+.cookmaster-cart-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(200, 129, 95, 0.5);
+}
+
+.cookmaster-cart-button i {
+  font-size: 1.5rem;
+}
+
+/* Badge du panier */
+.cookmaster-cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: var(--cookmaster-cart-secondary);
+  color: white;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cookmaster-cart-badge.cookmaster-pulse {
+  animation: cookmaster-pulse 0.5s ease;
+}
+
+@keyframes cookmaster-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* Contenu du mini-panier */
+.cookmaster-mini-cart-content {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 350px;
+  max-height: 500px;
+  background: var(--cookmaster-cart-bg);
+  border-radius: 20px;
+  box-shadow: var(--cookmaster-cart-shadow);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  border: 1px solid var(--cookmaster-cart-border);
+}
+
+/* En-tête du mini-panier */
+.cookmaster-mini-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--cookmaster-cart-border);
+}
+
+.cookmaster-mini-cart-header h3 {
+  font-family: "Playfair Display", serif;
+  color: var(--cookmaster-cart-secondary);
+  margin: 0;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cookmaster-cart-count {
+  color: var(--cookmaster-cart-primary);
+  font-size: 1rem;
+}
+
+.cookmaster-close-cart {
+  background: transparent;
+  border: none;
+  color: var(--cookmaster-cart-text);
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.cookmaster-close-cart:hover {
+  background-color: var(--cookmaster-cart-item-hover);
+  color: var(--cookmaster-cart-primary);
+}
+
+/* Liste des articles */
+.cookmaster-mini-cart-items {
+  padding: 1rem;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+.cookmaster-mini-cart-items::-webkit-scrollbar {
+  width: 6px;
+}
+
+.cookmaster-mini-cart-items::-webkit-scrollbar-track {
+  background: var(--cookmaster-cart-bg);
+}
+
+.cookmaster-mini-cart-items::-webkit-scrollbar-thumb {
+  background-color: var(--cookmaster-cart-primary);
+  border-radius: 6px;
+}
+
+/* Article du panier */
+.cookmaster-cart-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--cookmaster-cart-item-bg);
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.2s ease;
+  animation: cookmaster-slide-in 0.3s ease;
+}
+
+.cookmaster-cart-item:hover {
+  background-color: var(--cookmaster-cart-item-hover);
+}
+
+.cookmaster-cart-item.cookmaster-removing {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+@keyframes cookmaster-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Image de l'article */
+.cookmaster-cart-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.cookmaster-cart-item-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cookmaster-cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Détails de l'article */
+.cookmaster-cart-item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cookmaster-cart-item-details h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  color: var(--cookmaster-cart-secondary);
+  font-weight: 600;
+}
+
+.cookmaster-cart-item-price {
+  color: var(--cookmaster-cart-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Contrôle de quantité */
+.cookmaster-cart-item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(200, 129, 95, 0.1);
+  border-radius: 25px;
+  padding: 0.25rem;
+}
+
+.cookmaster-quantity-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: none;
+  background: var(--cookmaster-cart-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-size: 0.7rem;
+}
+
+.cookmaster-quantity-btn:hover {
+  background-color: #b8714f;
+  transform: scale(1.1);
+}
+
+.cookmaster-quantity {
+  font-weight: 600;
+  color: var(--cookmaster-cart-text);
+  min-width: 20px;
+  text-align: center;
+}
+
+/* Bouton de suppression */
+.cookmaster-remove-item-btn {
+  background: transparent;
+  border: none;
+  color: var(--cookmaster-cart-text);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cookmaster-remove-item-btn:hover {
+  color: var(--cookmaster-cart-error);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Panier vide */
+.cookmaster-empty-cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--cookmaster-cart-text);
+  opacity: 0.7;
+}
+
+.cookmaster-empty-cart i {
+  font-size: 3rem;
+  color: var(--cookmaster-cart-primary);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.cookmaster-empty-cart p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.cookmaster-browse-menu-btn {
+  background: var(--cookmaster-cart-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cookmaster-browse-menu-btn:hover {
+  background-color: #b8714f;
+  transform: translateY(-2px);
+}
+
+/* Pied du mini-panier */
+.cookmaster-mini-cart-footer {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--cookmaster-cart-border);
+  background: var(--cookmaster-cart-bg);
+}
+
+.cookmaster-cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  font-weight: 600;
+  color: var(--cookmaster-cart-secondary);
+  font-size: 1.1rem;
+}
+
+.cookmaster-cart-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.cookmaster-view-cart-btn {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--cookmaster-cart-primary);
+  background: transparent;
+  color: var(--cookmaster-cart-primary);
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.cookmaster-view-cart-btn:hover {
+  background-color: var(--cookmaster-cart-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.cookmaster-checkout-btn {
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, var(--cookmaster-cart-primary), #b8714f);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.cookmaster-checkout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 129, 95, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cookmaster-mini-cart {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .cookmaster-mini-cart-content {
+    width: 320px;
+    max-height: 450px;
+  }
+
+  .cookmaster-cart-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookmaster-cart-button {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cookmaster-mini-cart-content {
+    width: 300px;
+    right: -10px;
+  }
+
+  .cookmaster-cart-button i {
+    font-size: 1.2rem;
+  }
+
+  .cookmaster-cart-badge {
+    width: 20px;
+    height: 20px;
+    font-size: 0.7rem;
+  }
+}
+
+/* Ajouter à la fin du fichier */
+.cookmaster-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transform: translateX(120%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.cookmaster-notification.show {
+  transform: translateX(0);
+}
+
+.cookmaster-notification.success {
+  background: var(--cookmaster-cart-success);
+  color: white;
+}
+
+.cookmaster-notification.error {
+  background: var(--cookmaster-cart-error);
+  color: white;
+}
+
+.cookmaster-notification i {
+  font-size: 1.25rem;
+}

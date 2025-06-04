@@ -1,0 +1,456 @@
+/* === STYLES SYSTÈME DE NOTATION COOKMASTER === */
+
+/* Système de notation utilisateur */
+.dish-rating-system {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: rgba(200, 129, 95, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(200, 129, 95, 0.1);
+}
+
+.user-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.rating-label {
+  font-weight: 500;
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.rating-stars .star {
+  font-size: 1.4rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.rating-stars .star:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.rating-stars .star.user-rated {
+  color: #ffd700;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Affichage de la note moyenne */
+.average-rating-display {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: linear-gradient(135deg, rgba(200, 129, 95, 0.1), rgba(200, 129, 95, 0.05));
+  border-radius: 10px;
+  border: 1px solid rgba(200, 129, 95, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avg-rating-stars {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.avg-star {
+  font-size: 1.1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.avg-star.filled {
+  color: #ffd700;
+}
+
+.avg-star.half {
+  background: linear-gradient(90deg, #ffd700 50%, #ddd 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.avg-star.empty {
+  color: #ddd;
+}
+
+.avg-rating-text {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.avg-rating-text strong {
+  color: var(--primary-color);
+  font-size: 1rem;
+}
+
+/* Section commentaires */
+.dish-comments {
+  margin: 1rem 0;
+}
+
+.comment-btn {
+  background: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.comment-btn:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 129, 95, 0.3);
+}
+
+.comments-list {
+  margin-top: 1rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.comment {
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background: var(--white);
+  border-radius: 10px;
+  border-left: 3px solid var(--primary-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment-header strong {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+
+.comment-rating {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.comment-rating .avg-star {
+  font-size: 0.8rem;
+}
+
+.comment p {
+  margin: 0.5rem 0;
+  color: var(--text-color);
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.comment small {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+/* Modal de commentaire */
+.comment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease;
+}
+
+.comment-modal-content {
+  background: var(--white);
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+.comment-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(200, 129, 95, 0.1);
+  background: linear-gradient(135deg, var(--primary-color), #b8714f);
+  color: white;
+  border-radius: 15px 15px 0 0;
+}
+
+.comment-modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.close-modal {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: background 0.2s ease;
+}
+
+.close-modal:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.comment-modal-body {
+  padding: 1.5rem;
+}
+
+.comment-modal-body textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid rgba(200, 129, 95, 0.2);
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.3s ease;
+}
+
+.comment-modal-body textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(200, 129, 95, 0.1);
+}
+
+.comment-rating {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.comment-rating span {
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.comment-stars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.comment-star {
+  font-size: 1.8rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.comment-star:hover {
+  color: #ffd700;
+  transform: scale(1.1);
+}
+
+.comment-modal-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(200, 129, 95, 0.1);
+  background: rgba(200, 129, 95, 0.02);
+  border-radius: 0 0 15px 15px;
+}
+
+.btn-primary,
+.btn-secondary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #b8714f);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #b8714f, #a6653f);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 129, 95, 0.3);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-color);
+  border: 2px solid rgba(200, 129, 95, 0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 129, 95, 0.1);
+  border-color: var(--primary-color);
+}
+
+/* Notifications */
+.cookmaster-notification {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  border-radius: 10px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.cookmaster-notification i {
+  font-size: 1.1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .user-rating {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .average-rating-display {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .comment-modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .comment-modal-footer {
+    flex-direction: column;
+  }
+
+  .rating-stars .star {
+    font-size: 1.2rem;
+  }
+
+  .comment-star {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mode sombre */
+[data-theme="dark"] .dish-rating-system {
+  background: rgba(200, 129, 95, 0.1);
+  border-color: rgba(200, 129, 95, 0.2);
+}
+
+[data-theme="dark"] .average-rating-display {
+  background: linear-gradient(135deg, rgba(200, 129, 95, 0.15), rgba(200, 129, 95, 0.08));
+  border-color: rgba(200, 129, 95, 0.2);
+}
+
+[data-theme="dark"] .comment {
+  background: var(--dark-bg-secondary);
+  color: var(--dark-text);
+}
+
+[data-theme="dark"] .comment-modal-content {
+  background: var(--dark-bg-secondary);
+  color: var(--dark-text);
+}
+
+[data-theme="dark"] .comment-modal-body textarea {
+  background: var(--dark-bg-primary);
+  color: var(--dark-text);
+  border-color: rgba(200, 129, 95, 0.3);
+}
+
+/* Amélioration de l'accessibilité */
+.rating-stars .star:focus,
+.comment-star:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Effets visuels améliorés */
+.dish-rating-system {
+  position: relative;
+  overflow: hidden;
+}
+
+.dish-rating-system::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.dish-rating-system:hover::before {
+  left: 100%;
+}
+
+/* Indicateur de notation utilisateur */
+.user-rated-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  font-weight: 500;
+  margin-top: 0.3rem;
+}
+
+.user-rated-indicator i {
+  font-size: 0.7rem;
+}

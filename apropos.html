@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - CookMaster</title>
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="apropos-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- jQuery et plugins -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+</head>
+<body>
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-circle">CM</div>
+                <span class="logo-text">CookMaster</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="menu.html" class="nav-link">Menu</a></li>
+                <li><a href="apropos.html" class="nav-link active">À propos</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">FR</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> Français
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                
+                <a href="reservation-clean.html" class="book-table">
+                    Réserver une table
+                </a>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        
+
+        <!-- Navigation Spy -->
+        <div class="scroll-spy-nav" id="scrollSpyNav">
+            <div class="spy-nav-container">
+                <a href="#hero" class="spy-link active" data-section="hero">
+                    <span class="spy-dot"></span>
+                    <span class="spy-label">Accueil</span>
+                </a>
+                <a href="#story" class="spy-link" data-section="story">
+                    <span class="spy-dot"></span>
+                    <span class="spy-label">Notre Histoire</span>
+                </a>
+                <a href="#team" class="spy-link" data-section="team">
+                    <span class="spy-dot"></span>
+                    <span class="spy-label">Équipe</span>
+                </a>
+                <a href="#values" class="spy-link" data-section="values">
+                    <span class="spy-dot"></span>
+                    <span class="spy-label">Valeurs</span>
+                </a>
+                <a href="#awards" class="spy-link" data-section="awards">
+                    <span class="spy-dot"></span>
+                    <span class="spy-label">Récompenses</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section avec Parallax -->
+    <section id="hero" class="about-hero parallax-section">
+        <div class="parallax-bg" data-speed="0.5">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-line" data-text="L'Art de la">L'Art de la</span>
+                    <span class="title-line" data-text="Gastronomie">Gastronomie</span>
+                    <span class="title-line" data-text="Mondiale">Mondiale</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Depuis 1985, nous créons des expériences culinaires exceptionnelles qui transcendent les frontières culturelles
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="38">0</span>
+                        <span class="stat-label">Années d'Excellence</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="15">0</span>
+                        <span class="stat-label">Chefs Étoilés</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-count="250000">0</span>
+                        <span class="stat-label">Clients Satisfaits</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-elements">
+                    <div class="floating-card" data-tilt>
+                        <img src="images/chef at work.jpg" alt="Chef at work">
+                    </div>
+                    <div class="floating-card" data-tilt>
+                        <img src="images/signature dish.jfif" alt="Signature dish">
+                    </div>
+                    <div class="floating-card" data-tilt>
+                        <img src="images/restaurant-interior-.jpg" alt="Restaurant interior">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow"></div>
+            <span>Découvrir notre histoire</span>
+        </div>
+    </section>
+
+    <!-- Timeline Interactive - SECTION COMPLÈTE -->
+    <section id="story" class="story-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Histoire</h2>
+                <p class="section-subtitle">Un voyage culinaire à travers le temps</p>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- 1985 - Les Débuts -->
+                <div class="timeline-item" data-year="1985">
+                    <div class="timeline-marker" data-year="1985">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/debut modeste.webp" alt="Ouverture 1985">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Les Débuts Modestes</h3>
+                                <p>Ouverture du premier restaurant CookMaster à Genève par le chef Antoine Dubois et sa femme Marie. Avec seulement 20 places et une équipe de 4 personnes, ils créent une cuisine fusion innovante mélangeant traditions françaises et saveurs du monde.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1992 - Première Étoile -->
+                <div class="timeline-item" data-year="1992">
+                    <div class="timeline-marker" data-year="1992">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/michelin.png" alt="Première étoile">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Première Étoile Michelin</h3>
+                                <p>Reconnaissance internationale avec notre première étoile Michelin, récompensant 7 années d'innovation culinaire. Le restaurant s'agrandit et accueille désormais 50 convives dans un cadre entièrement rénové.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1998 - École Culinaire -->
+                <div class="timeline-item" data-year="1998">
+                    <div class="timeline-marker" data-year="1998">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/ecole culinaire.jfif" alt="École culinaire">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>École Culinaire CookMaster</h3>
+                                <p>Création de notre école culinaire pour transmettre notre savoir-faire. Plus de 500 chefs ont été formés dans nos techniques de fusion culinaire, propageant notre philosophie à travers le monde.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2001 - Expansion -->
+                <div class="timeline-item" data-year="2001">
+                    <div class="timeline-marker" data-year="2001">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/expansion.webp" alt="Expansion internationale">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Expansion Internationale</h3>
+                                <p>Ouverture de nos restaurants à Paris, Londres et New York. Chaque établissement adapte notre concept aux goûts locaux tout en conservant notre identité unique de cuisine mondiale raffinée.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2008 - Deuxième Étoile -->
+                <div class="timeline-item" data-year="2008">
+                    <div class="timeline-marker" data-year="2008">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/michelin 2.jpeg" alt="Deuxième étoile">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Deuxième Étoile Michelin</h3>
+                                <p>Notre restaurant de Genève obtient sa deuxième étoile Michelin, confirmant notre position parmi les meilleurs restaurants du monde. Introduction de notre menu dégustation signature de 12 services.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2015 - Cuisine Durable -->
+                <div class="timeline-item" data-year="2015">
+                    <div class="timeline-marker" data-year="2015">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/durable.webp" alt="Cuisine durable">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Révolution Durable</h3>
+                                <p>Lancement de notre programme "Terre & Mer Responsable" avec 100% d'ingrédients biologiques et locaux. Création de notre propre ferme urbaine et partenariats avec 50 producteurs locaux.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2020 - Innovation Digitale -->
+                <div class="timeline-item" data-year="2020">
+                    <div class="timeline-marker" data-year="2020">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/inovation digital.jpg" alt="Innovation digitale">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Innovation Digitale</h3>
+                                <p>Adaptation rapide pendant la pandémie avec notre service "CookMaster à Domicile", cours de cuisine virtuels et kits gastronomiques. Plus de 10,000 familles ont découvert notre cuisine chez elles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2023 - Troisième Étoile -->
+                <div class="timeline-item" data-year="2023">
+                    <div class="timeline-marker" data-year="2023">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-card">
+                            <div class="timeline-image">
+                                <img src="images/michelin 3.jpeg" alt="Innovation technologique">
+                            </div>
+                            <div class="timeline-text">
+                                <h3>Troisième Étoile & IA Culinaire</h3>
+                                <p>Obtention de notre troisième étoile Michelin et intégration de l'intelligence artificielle pour personnaliser l'expérience culinaire. Notre système analyse les préférences de chaque client pour créer des menus sur mesure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Équipe avec Carousel -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Équipe d'Exception</h2>
+                <p class="section-subtitle">Des talents du monde entier unis par la passion culinaire</p>
+            </div>
+
+            <div class="team-carousel owl-carousel">
+                <div class="team-member">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/chef 1.jpg" alt="Chef Antoine Dubois">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Chef Antoine Dubois</h3>
+                            <p class="member-role">Chef Exécutif</p>
+                            <p class="member-description">Formé dans les plus grands restaurants parisiens, Antoine apporte 20 ans d'expérience en cuisine française moderne.</p>
+                            <div class="member-skills">
+                                <span class="skill-tag">Cuisine Française</span>
+                                <span class="skill-tag">Innovation</span>
+                                <span class="skill-tag">Leadership</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/chef 3.jpg" alt="Chef Yuki Tanaka">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Chef Yuki Tanaka</h3>
+                            <p class="member-role">Spécialiste Cuisine Asiatique</p>
+                            <p class="member-description">Maître sushi de Tokyo, Yuki révolutionne la cuisine japonaise avec des techniques contemporaines.</p>
+                            <div class="member-skills">
+                                <span class="skill-tag">Sushi</span>
+                                <span class="skill-tag">Cuisine Japonaise</span>
+                                <span class="skill-tag">Précision</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/chef 4.webp" alt="Chef Maria Rodriguez">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Chef Maria Rodriguez</h3>
+                            <p class="member-role">Chef Pâtissière</p>
+                            <p class="member-description">Artiste culinaire spécialisée dans les desserts fusion, Maria crée des œuvres d'art comestibles.</p>
+                            <div class="member-skills">
+                                <span class="skill-tag">Pâtisserie</span>
+                                <span class="skill-tag">Art Culinaire</span>
+                                <span class="skill-tag">Créativité</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="member-card">
+                        <div class="member-image">
+                            <img src="images/chef 2.jpg" alt="Sommelier Pierre Martin">
+                            <div class="member-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h3>Pierre Martin</h3>
+                            <p class="member-role">Sommelier en Chef</p>
+                            <p class="member-description">Expert en vins du monde entier, Pierre crée des accords parfaits pour sublimer chaque plat.</p>
+                            <div class="member-skills">
+                                <span class="skill-tag">Œnologie</span>
+                                <span class="skill-tag">Accords Mets-Vins</span>
+                                <span class="skill-tag">Expertise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Valeurs avec Animations -->
+    <section id="values" class="values-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Valeurs</h2>
+                <p class="section-subtitle">Les principes qui guident notre excellence culinaire</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card" data-value="excellence">
+                    <div class="value-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>Nous visons la perfection dans chaque plat, chaque service, chaque détail de votre expérience.</p>
+                    <div class="value-progress">
+                        <div class="progress-bar" data-progress="98"></div>
+                    </div>
+                </div>
+
+                <div class="value-card" data-value="innovation">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>Nous repoussons constamment les limites de la créativité culinaire avec de nouvelles techniques.</p>
+                    <div class="value-progress">
+                        <div class="progress-bar" data-progress="95"></div>
+                    </div>
+                </div>
+
+                <div class="value-card" data-value="durabilite">
+                    <div class="value-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Durabilité</h3>
+                    <p>Nous nous engageons pour une cuisine responsable avec des ingrédients locaux et biologiques.</p>
+                    <div class="value-progress">
+                        <div class="progress-bar" data-progress="92"></div>
+                    </div>
+                </div>
+
+                <div class="value-card" data-value="passion">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Notre amour pour la gastronomie se ressent dans chaque création, chaque présentation.</p>
+                    <div class="value-progress">
+                        <div class="progress-bar" data-progress="100"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Graphique des Statistiques -->
+            <div class="stats-chart-container">
+                <h3>Notre Impact en Chiffres</h3>
+                <div class="chart-wrapper">
+                    <canvas id="statsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Récompenses avec Galerie Interactive -->
+    <section id="awards" class="awards-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Récompenses</h2>
+                <p class="section-subtitle">La reconnaissance de notre excellence culinaire</p>
+            </div>
+
+            <div class="awards-showcase">
+                <div class="awards-filter">
+                    <button class="filter-btn active" data-filter="all">Toutes</button>
+                    <button class="filter-btn" data-filter="michelin">Michelin</button>
+                    <button class="filter-btn" data-filter="gault-millau">Gault & Millau</button>
+                    <button class="filter-btn" data-filter="international">International</button>
+                </div>
+
+                <div class="awards-grid">
+                    <div class="award-item michelin" data-year="2023">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/michelin 3.jpeg" alt="Michelin 3 étoiles">
+                            </div>
+                            <div class="award-info">
+                                <h4>3 Étoiles Michelin</h4>
+                                <p class="award-year">2023</p>
+                                <p class="award-description">Reconnaissance de notre excellence culinaire exceptionnelle</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="award-item gault-millau" data-year="2022">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/Gault & Millau.jpg" alt="Gault Millau">
+                            </div>
+                            <div class="award-info">
+                                <h4>19/20 Gault & Millau</h4>
+                                <p class="award-year">2022</p>
+                                <p class="award-description">Note exceptionnelle pour notre créativité culinaire</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="award-item international" data-year="2021">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/Top 10 World's 50 Best.avif" alt="World's 50 Best">
+                            </div>
+                            <div class="award-info">
+                                <h4>Top 10 World's 50 Best</h4>
+                                <p class="award-year">2021</p>
+                                <p class="award-description">Classé parmi les 10 meilleurs restaurants au monde</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="award-item international" data-year="2020">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/durable.webp" alt="James Beard">
+                            </div>
+                            <div class="award-info">
+                                <h4>James Beard Award</h4>
+                                <p class="award-year">2020</p>
+                                <p class="award-description">Meilleur restaurant international</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="award-item michelin" data-year="2019">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/etoile michelin vert.jpg" alt="Michelin Green Star">
+                            </div>
+                            <div class="award-info">
+                                <h4>Étoile Verte Michelin</h4>
+                                <p class="award-year">2019</p>
+                                <p class="award-description">Reconnaissance de notre engagement durable</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="award-item international" data-year="2018">
+                        <div class="award-card">
+                            <div class="award-image">
+                                <img src="images/restaurant-interior.jpg" alt="AAA Five Diamond">
+                            </div>
+                            <div class="award-info">
+                                <h4>AAA Five Diamond</h4>
+                                <p class="award-year">2018</p>
+                                <p class="award-description">Excellence en service et cuisine</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Rotatifs -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ce Qu'ils Disent de Nous</h2>
+                <p class="section-subtitle">L'avis de nos clients et critiques gastronomiques</p>
+            </div>
+
+            <div class="testimonials-carousel">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"CookMaster redéfinit l'art culinaire. Chaque plat est une symphonie de saveurs qui transporte vos sens dans un voyage extraordinaire à travers les cultures du monde."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/Michel Bras.jpg" alt="Michel Bras">
+                            </div>
+                            <div class="author-info">
+                                <h4>Michel Bras</h4>
+                                <p>Chef Étoilé Michelin</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"Une expérience gastronomique absolument remarquable. L'innovation culinaire de CookMaster établit de nouveaux standards dans l'industrie de la restauration fine."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/Julia Child.webp" alt="Julia Child">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>Critique Gastronomique - Le Figaro</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            <i class="fas fa-quote-left"></i>
+                            <p>"CookMaster n'est pas seulement un restaurant, c'est une destination culinaire. Chaque visite est une découverte de nouvelles saveurs et techniques innovantes."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-image">
+                                <img src="images/gordon ramsey.jpg" alt="Gordon Ramsay">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Chen</h4>
+                                <p>Food & Wine Magazine</p>
+                                <div class="rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-logo">
+                    <div class="logo-circle">CM</div>
+                    <span class="logo-text">CookMaster</span>
+                </div>
+                <div class="footer-tagline">
+                    <p>Un Voyage Culinaire Mondial</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2025 CookMaster. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="apropos-script.js"></script>
+    <script src="timeline-injector.js"></script>
+</body>
+</html>

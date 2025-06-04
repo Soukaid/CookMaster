@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - CookMaster</title>
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <script src="carousel.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="contact-script.js" defer></script>
+</head>
+<body>
+    <header class="main-header">
+        <!-- Navigation moderne et professionnelle -->
+        <nav class="main-nav">
+            <div class="logo">
+                <div class="logo-circle">CM</div>
+                <span class="logo-text">CookMaster</span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link" data-fr="Accueil" data-en="Home">Accueil</a></li>
+                <li><a href="menu.html" class="nav-link" data-fr="Menu" data-en="Menu">Menu</a></li>
+                <li><a href="apropos.html" class="nav-link" data-fr="À propos" data-en="About">À propos</a></li>
+                <li><a href="contact.html" class="nav-link active" data-fr="Contact" data-en="Contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-controls">
+                <div class="language-selector">
+                    <button class="lang-btn" id="langBtn">
+                        <i class="fas fa-globe"></i>
+                        <span id="currentLang">FR</span>
+                    </button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button class="lang-option" data-lang="fr">
+                            <img src="https://flagcdn.com/w20/fr.png" alt="Français"> Français
+                        </button>
+                        <button class="lang-option" data-lang="en">
+                            <img src="https://flagcdn.com/w20/gb.png" alt="English"> English
+                        </button>
+                    </div>
+                </div>
+                
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+                
+                <div class="auth-section">
+                    <a href="login.html" class="auth-btn" id="authButton">
+                        <i class="fas fa-user"></i>
+                        <span data-fr="Connexion" data-en="Login">Connexion</span>
+                    </a>
+                    
+                    <div class="user-profile-compact" id="userProfile" style="display: none;">
+                        <div class="user-dropdown">
+                            <button class="user-toggle" id="userToggle">
+                                <div class="user-avatar-small">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <span class="user-name-short" id="userName"></span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="user-menu" id="userMenu">
+                                <a href="profil-real-data.html" class="user-menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span data-fr="Mon Profil" data-en="My Profile">Mon Profil</span>
+                                </a>
+                                <button class="user-menu-item logout-btn" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span data-fr="Déconnexion" data-en="Logout">Déconnexion</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="reservation-clean.html" class="book-table-btn">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span data-fr="Réserver" data-en="Book">Réserver</span>
+                </a>
+                
+                <div class="cart-icon">
+                    <a href="orders.html" id="cartButton">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section Contact -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 data-fr="Contactez-nous" data-en="Contact Us">Contactez-nous</h1>
+                <p data-fr="Nous sommes là pour vous aider et répondre à toutes vos questions" data-en="We are here to help and answer all your questions">
+                    Nous sommes là pour vous aider et répondre à toutes vos questions
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Formulaire de Contact -->
+                <div class="contact-form-container">
+                    <div class="section-header">
+                        <h2 data-fr="Envoyez-nous un message" data-en="Send us a message">Envoyez-nous un message</h2>
+                        <p data-fr="Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais" data-en="Fill out the form below and we will get back to you as soon as possible">
+                            Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais
+                        </p>
+                    </div>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName" data-fr="Prénom *" data-en="First Name *">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                                <i class="fas fa-user form-icon"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName" data-fr="Nom *" data-en="Last Name *">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                                <i class="fas fa-user form-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                                <i class="fas fa-envelope form-icon"></i>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" data-fr="Téléphone" data-en="Phone">Téléphone</label>
+                                <input type="tel" id="phone" name="phone">
+                                <i class="fas fa-phone form-icon"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" data-fr="Sujet *" data-en="Subject *">Sujet *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" data-fr="Choisissez un sujet" data-en="Choose a subject">Choisissez un sujet</option>
+                                <option value="reservation" data-fr="Réservation" data-en="Reservation">Réservation</option>
+                                <option value="commande" data-fr="Commande" data-en="Order">Commande</option>
+                                <option value="reclamation" data-fr="Réclamation" data-en="Complaint">Réclamation</option>
+                                <option value="suggestion" data-fr="Suggestion" data-en="Suggestion">Suggestion</option>
+                                <option value="autre" data-fr="Autre" data-en="Other">Autre</option>
+                            </select>
+                            <i class="fas fa-tag form-icon"></i>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" data-fr="Message *" data-en="Message *">Message *</label>
+                            <textarea id="message" name="message" rows="6" required data-fr-placeholder="Décrivez votre demande en détail..." data-en-placeholder="Describe your request in detail..."></textarea>
+                            <i class="fas fa-comment form-icon"></i>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span class="checkmark"></span>
+                                <span data-fr="Je souhaite recevoir la newsletter CookMaster" data-en="I want to receive the CookMaster newsletter">Je souhaite recevoir la newsletter CookMaster</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Informations de Contact -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3 data-fr="Adresse" data-en="Address">Adresse</h3>
+                        </div>
+                        <p>65, Rue Ibnou Nafii, Maârif<br>Casablanca, Maroc</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-phone"></i>
+                            <h3 data-fr="Téléphone" data-en="Phone">Téléphone</h3>
+                        </div>
+                        <p>+212 5 22 25 66 89</p>
+                        <small data-fr="Lun-Dim: 9h00 - 23h00" data-en="Mon-Sun: 9:00 - 23:00">Lun-Dim: 9h00 - 23h00</small>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email</h3>
+                        </div>
+                        <p>info@cookmaster.com</p>
+                        <small data-fr="Réponse sous 24h" data-en="Response within 24h">Réponse sous 24h</small>
+                    </div>
+                    
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-clock"></i>
+                            <h3 data-fr="Horaires" data-en="Hours">Horaires</h3>
+                        </div>
+                        <div class="hours">
+                            <div class="hour-row">
+                                <span data-fr="Lun - Ven" data-en="Mon - Fri">Lun - Ven</span>
+                                <span>11:00 - 23:00</span>
+                            </div>
+                            <div class="hour-row">
+                                <span data-fr="Sam - Dim" data-en="Sat - Sun">Sam - Dim</span>
+                                <span>10:00 - 00:00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 data-fr="Trouvez-nous" data-en="Find Us">Trouvez-nous</h2>
+            <div class="map-container">
+                <!-- Option 1 - Google Maps (Recommandée) : -->
+                <div class="map-iframe">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3323.8234567890123!2d-7.6177!3d33.5731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDM0JzIzLjIiTiA3wrAzNycwMy43Ilc!5e0!3m2!1sfr!2sma!4v1234567890123!5m2!1sfr!2sma"
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-info">
+                    <h3 data-fr="Comment nous trouver" data-en="How to find us">Comment nous trouver</h3>
+                    <div class="transport-info">
+    <div class="transport-item">
+        <i class="fas fa-subway"></i>
+        <div>
+            <strong data-fr="Tramway" data-en="Tramway">Tramway</strong>
+            <p data-fr="Ligne T1, T2 - Arrêt Maârif" data-en="Line T1, T2 - Maârif Stop">Ligne T1, T2 - Arrêt Maârif</p>
+        </div>
+    </div>
+    <div class="transport-item">
+        <i class="fas fa-bus"></i>
+        <div>
+            <strong>Bus</strong>
+            <p data-fr="Lignes 10, 11, 20, 30" data-en="Lines 10, 11, 20, 30">Lignes 10, 11, 20, 30</p>
+        </div>
+    </div>
+    <div class="transport-item">
+        <i class="fas fa-car"></i>
+        <div>
+            <strong>Parking</strong>
+            <p data-fr="Parking Maârif Center" data-en="Maârif Center Parking">Parking Maârif Center</p>
+        </div>
+    </div>
+    <div class="transport-item">
+        <i class="fas fa-taxi"></i>
+        <div>
+            <strong>Taxi</strong>
+            <p data-fr="Grand Taxi & Petit Taxi disponibles" data-en="Grand Taxi & Petit Taxi available">Grand Taxi & Petit Taxi disponibles</p>
+        </div>
+    </div>
+</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 data-fr="Questions Fréquentes" data-en="Frequently Asked Questions">Questions Fréquentes</h2>
+                <p data-fr="Trouvez rapidement les réponses à vos questions" data-en="Find answers to your questions quickly">
+                    Trouvez rapidement les réponses à vos questions
+                </p>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-fr="Comment faire une réservation ?" data-en="How to make a reservation?">Comment faire une réservation ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-fr="Vous pouvez faire une réservation en nous appelant au + 41 22 754 41 00 ou en utilisant notre formulaire de contact en précisant 'Réservation' comme sujet." data-en="You can make a reservation by calling us at + 41 22 754 41 00 or by using our contact form specifying 'Reservation' as the subject.">
+                            Vous pouvez faire une réservation en nous appelant au + 41 22 754 41 00 ou en utilisant notre formulaire de contact en précisant "Réservation" comme sujet.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-fr="Proposez-vous la livraison ?" data-en="Do you offer delivery?">Proposez-vous la livraison ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-fr="Oui, nous proposons la livraison dans un rayon de 15km autour du restaurant. Les frais de livraison sont de 5 CHF pour les commandes inférieures à 50 CHF." data-en="Yes, we offer delivery within a 15km radius around the restaurant. Delivery fees are 5 CHF for orders under 50 CHF.">
+                            Oui, nous proposons la livraison dans un rayon de 15km autour du restaurant. Les frais de livraison sont de 5 CHF pour les commandes inférieures à 50 CHF.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-fr="Avez-vous des options végétariennes ?" data-en="Do you have vegetarian options?">Avez-vous des options végétariennes ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-fr="Absolument ! Notre menu propose de nombreuses options végétariennes et véganes. Consultez notre menu en ligne pour découvrir toutes nos spécialités." data-en="Absolutely! Our menu offers many vegetarian and vegan options. Check our online menu to discover all our specialties.">
+                            Absolument ! Notre menu propose de nombreuses options végétariennes et véganes. Consultez notre menu en ligne pour découvrir toutes nos spécialités.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3 data-fr="Acceptez-vous les groupes ?" data-en="Do you accept groups?">Acceptez-vous les groupes ?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p data-fr="Oui, nous accueillons les groupes jusqu'à 25 personnes. Pour les groupes de plus de 10 personnes, nous recommandons de réserver à l'avance." data-en="Yes, we welcome groups up to 25 people. For groups of more than 10 people, we recommend booking in advance.">
+                            Oui, nous accueillons les groupes jusqu'à 25 personnes. Pour les groupes de plus de 10 personnes, nous recommandons de réserver à l'avance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer sophistiqué -->
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-logo">
+                    <div class="logo-circle">CM</div>
+                    <span class="logo-text">CookMaster</span>
+                </div>
+                <div class="footer-tagline">
+                    <p data-fr="Un Voyage Culinaire Mondial" data-en="A Global Culinary Journey">Un Voyage Culinaire Mondial</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3 data-fr="Abonnez-vous à notre newsletter" data-en="Subscribe to our newsletter">Abonnez-vous à notre newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" data-fr-placeholder="Votre adresse email" data-en-placeholder="Your email address" required>
+                        <button type="submit" data-fr="S'abonner" data-en="Subscribe">S'abonner</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-middle">
+            <div class="container">
+                <div class="footer-columns">
+                    <div class="footer-column">
+                        <h4 data-fr="Horaires" data-en="Hours">Horaires</h4>
+                        <p data-fr="Lundi - Vendredi: 11:00 - 23:00" data-en="Monday - Friday: 11:00 - 23:00">Lundi - Vendredi: 11:00 - 23:00</p>
+                        <p data-fr="Samedi - Dimanche: 10:00 - 00:00" data-en="Saturday - Sunday: 10:00 - 00:00">Samedi - Dimanche: 10:00 - 00:00</p>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <p>+212 5 22 25 66 89</p>
+                        <p>info@cookmaster.com</p>
+                        <p>65, Rue Ibnou Nafii, Maârif, Casablanca </p>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-fr="Suivez-nous" data-en="Follow Us">Suivez-nous</h4>
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h4 data-fr="Récompenses" data-en="Awards">Récompenses</h4>
+                        <div class="awards-icons">
+                            <img src="/placeholder.svg?height=40&width=40" alt="Michelin Star">
+                            <img src="/placeholder.svg?height=40&width=40" alt="Gault Millau">
+                            <img src="/placeholder.svg?height=40&width=40" alt="World's Best">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="copyright">
+                    <p>&copy; 2025 CookMaster. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></p>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-fr="Politique de Confidentialité" data-en="Privacy Policy">Politique de Confidentialité</a>
+                    <a href="#" data-fr="Conditions d'Utilisation" data-en="Terms of Service">Conditions d'Utilisation</a>
+                    <a href="#" data-fr="Carrières" data-en="Careers">Carrières</a>
+                    <a href="#" data-fr="Plan du Site" data-en="Sitemap">Plan du Site</a>
+                </div>
+                <div class="payment-methods">
+                    <i class="fab fa-cc-visa"></i>
+                    <i class="fab fa-cc-mastercard"></i>
+                    <i class="fab fa-cc-amex"></i>
+                    <i class="fab fa-cc-paypal"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3 data-fr="Message envoyé !" data-en="Message sent!">Message envoyé !</h3>
+            </div>
+            <div class="modal-body">
+                <p data-fr="Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais." data-en="Your message has been sent successfully. We will get back to you as soon as possible.">
+                    Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-btn" onclick="closeModal()" data-fr="Fermer" data-en="Close">Fermer</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
