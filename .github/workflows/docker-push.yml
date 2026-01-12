@@ -1,0 +1,33 @@
+name: Build and Push Docker Image
+
+# Déclenche le workflow sur push dans la branche main
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ Checkout du code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # 2️⃣ Se connecter à Docker Hub
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # 3️⃣ Construire l’image
+      - name: Build Docker image
+        run: |
+          docker build -t soukaid/js-simple:latest .
+
+      # 4️⃣ Push vers Docker Hub
+      - name: Push Docker image
+        run: |
+          docker push soukaid/js-simple:latest
